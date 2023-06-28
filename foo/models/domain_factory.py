@@ -12,6 +12,7 @@ from foo.models.jobilize_consumer import JobilizeConsumer
 from foo.models.linkedin_consumer import LinkedinConsumer
 from foo.models.monster_consumer import MonsterConsumer
 from foo.models.lensa_consumer import LensaConsumer
+from foo.models.osceolaschools_consumer import OsceolaschoolsConsumer
 from foo.models.startwire_consumer import StartwireConsumer
 from foo.models.talent_consumer import TalentConsumer
 from foo.models.teksystems_consumer import TeksystemsConsumer
@@ -35,7 +36,8 @@ CONSUMER_MAP = {
     'www.linkedin.com': LinkedinConsumer,
     'www.startwire.com': StartwireConsumer,
     'www.wayup.com': WayupConsumer,
-    'boards.greenhouse.io': GreenhouseConsumer
+    'boards.greenhouse.io': GreenhouseConsumer,
+    'jobs.osceolaschools.net': OsceolaschoolsConsumer
 }
 
 
