@@ -1,15 +1,21 @@
+import asyncio
+
 from pyppeteer.page import Page
 
 from foo.models.adzuna_consumer import AdzunaConsumer
 from foo.models.base_domain_consumer import BaseDomainConsumer
 from foo.models.bebee_consumer import BebeeConsumer
 from foo.models.careerbuilder_consumer import CareerbuilderConsumer
-from foo.models.glass_door_consumer import GlassDoorConsumer
+from foo.models.glassdoor_consumer import GlassDoorConsumer
+from foo.models.greenhouse_consumer import GreenhouseConsumer
 from foo.models.jobilize_consumer import JobilizeConsumer
+from foo.models.linkedin_consumer import LinkedinConsumer
 from foo.models.monster_consumer import MonsterConsumer
 from foo.models.lensa_consumer import LensaConsumer
+from foo.models.startwire_consumer import StartwireConsumer
 from foo.models.talent_consumer import TalentConsumer
 from foo.models.teksystems_consumer import TeksystemsConsumer
+from foo.models.wayup_consumer import WayupConsumer
 from foo.models.ziprecruiter_consumer import ZiprecruiterConsumer
 from foo.utils.log_util import logger
 from urllib.parse import urlparse
@@ -25,7 +31,11 @@ CONSUMER_MAP = {
     'www.adzuna.com': AdzunaConsumer,
     'www.talent.com': TalentConsumer,
     'www.ziprecruiter.com': ZiprecruiterConsumer,
-    'careers.teksystems.com': TeksystemsConsumer
+    'careers.teksystems.com': TeksystemsConsumer,
+    'www.linkedin.com': LinkedinConsumer,
+    'www.startwire.com': StartwireConsumer,
+    'www.wayup.com': WayupConsumer,
+    'boards.greenhouse.io': GreenhouseConsumer
 }
 
 

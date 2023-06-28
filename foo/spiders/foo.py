@@ -29,7 +29,7 @@ class FooSpider(scrapy.Spider):
 
 
 async def pre_response(page: Page):
-    # await asyncio.sleep(10) # 先等30s，应对需要跳转的情况
+    await asyncio.sleep(10) # 先等30s，应对需要跳转的情况
     consumer = DomainConsumerFactory.get_consumer(page)
     if consumer:
         description = await consumer.get_job_description()

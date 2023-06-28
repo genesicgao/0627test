@@ -6,7 +6,7 @@ from foo.utils.log_util import logger
 
 def get_urls():
     urls = [
-        'https://careers.teksystems.com/ca/fr/job/TESYUSJP-003847406fr_CA/IT-Project-Engineer'
+        'https://boards.greenhouse.io/minitab/jobs/4893242003'
     ]
     # with open(os.path.join(BASE_PATH, 'data', 'urls.csv'), 'r+') as file:
     #     for line in file.readlines():
