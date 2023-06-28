@@ -2,11 +2,14 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import random
 
 from scrapy import signals
 
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
+
+from foo.settings import USER_AGENT_LIST
 
 
 class FooSpiderMiddleware:
@@ -55,6 +58,11 @@ class FooSpiderMiddleware:
     def spider_opened(self, spider):
         spider.logger.info("Spider opened: %s" % spider.name)
 
+
+class UserAgentMiddleware(object):
+    def process_request(self, request, spider):
+        user_agent = random.choice(USER_AGENT_LIST)
+        request.headers['User-Agent'] = user_agent
 
 class FooDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
