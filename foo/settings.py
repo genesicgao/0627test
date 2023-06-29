@@ -21,15 +21,15 @@ NEWSPIDER_MODULE = "foo.spiders"
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 4
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 #DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 1
-CONCURRENT_REQUESTS_PER_IP = 1
+CONCURRENT_REQUESTS_PER_DOMAIN = 4
+CONCURRENT_REQUESTS_PER_IP = 4
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -53,6 +53,7 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'gerapy_pyppeteer.downloadermiddlewares.PyppeteerMiddleware': 543,
+    "foo.middlewares.FooDownloaderMiddleware": 543,
 }
 
 # Enable or disable extensions
@@ -63,9 +64,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "foo.pipelines.FooPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "foo.pipelines.FooPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -103,7 +104,7 @@ GERAPY_PYPPETEER_MUTE_AUDIO = False
 GERAPY_PYPPETEER_NO_SANDBOX = True
 GERAPY_PYPPETEER_DISABLE_SETUID_SANDBOX = True
 GERAPY_PYPPETEER_DISABLE_GPU = True
-GERAPY_PYPPETEER_HEADLESS = False
+GERAPY_PYPPETEER_HEADLESS = True
 # GERAPY_PYPPETEER_IGNORE_RESOURCE_TYPES = ['image', 'font', 'stylesheet']
 GERAPY_PYPPETEER_DOWNLOAD_TIMEOUT = 180
 GERAPY_PYPPETEER_PRETEND = False

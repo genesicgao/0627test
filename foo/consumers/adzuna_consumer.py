@@ -1,4 +1,4 @@
-from foo.models.base_domain_consumer import BaseDomainConsumer
+from foo.consumers.base_domain_consumer import BaseDomainConsumer
 
 
 class AdzunaConsumer(BaseDomainConsumer):

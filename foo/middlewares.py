@@ -1,4 +1,4 @@
-# Define here the models for your spider middleware
+# Define here the consumers for your spider middleware
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
@@ -95,6 +95,7 @@ class FooDownloaderMiddleware:
         # - return a Response object
         # - return a Request object
         # - or raise IgnoreRequest
+        response.status = 200
         return response
 
     def process_exception(self, request, exception, spider):
